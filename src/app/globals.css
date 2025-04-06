@@ -1,8 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Poppins:wght@600&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: #73138c;
+    --foreground: #121212;
+    --primary: #73138c;
+    --primary2: #9e11c3;
+    --primary3: #21012acc;
+    --secondary: #121212;
+    --secondary2: #121212cc;
+    --secondary3: #212121;
+    --gray: #9e9e9e;
+    --grey2: #eeeeee;
+    --inputColor: #37373766;
+    --inputBorder: #737373;
+    --navItemColor: #9e9e9e;
+    --navItemColorHover: #e37bff;
+  }
+
+  html {
+    font-family: "Urbanist", sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-blur {
+    background: linear-gradient(
+      287.09deg,
+      rgba(77, 3, 96, 0.16) 24.87%,
+      rgba(145, 5, 181, 0.4) 137.7%
+    );
+    filter: blur(200px);
+  }
+
+  .button-shadow {
+    box-shadow: 0px 48px 48px -32px rgba(28, 32, 40, 0.5),
+      inset 2px 4px 16px rgba(248, 248, 248, 0.06);
+    backdrop-filter: blur(50px);
+  }
 }
 
 @theme inline {
@@ -12,15 +48,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary2);
+  background-color: var(--secondary);
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Urbanist", sans-serif;
+  color: #ffffff;
 }

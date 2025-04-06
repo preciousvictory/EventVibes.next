@@ -1,103 +1,73 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { Navbar } from "@/components/HomeNavbar";
+import { EventsSection } from "@/components/landingPage/EventSection";
+import { FeaturesSection } from "@/components/landingPage/FeatureSection";
+import { Footer } from "@/components/landingPage/Footer";
+import { Hero } from "@/components/landingPage/Hero";
+import { HowItWorksSection } from "@/components/landingPage/HowitWorksSection";
+import { NFTRewardsSection } from "@/components/landingPage/NFTRewardsSection";
+import { StatsSection } from "@/components/landingPage/StatsSection";
+import React from "react";
+
+
+export const LandingPage: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="relative min-h-screen w-full bg-[#141414] overflow-x-hidden scroll-smooth">
+      {/* Background Bubbles - Desktop */}
+      <div className="hidden lg:block absolute w-full max-w-[1440px] h-[1000px] left-1/2 -translate-x-1/2 top-0">
+        <div className="absolute w-[572px] h-[566px] left-[-157px] top-[-142px] bg-gradient-blur opacity-60" />
+        <div className="absolute w-[572px] h-[566px] right-[-96px] top-[141px] bg-gradient-blur opacity-60" />
+        <div className="absolute w-[572px] h-[566px] left-[207px] top-[651px] bg-gradient-blur opacity-60" />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Background Bubbles - Mobile */}
+      <div className="lg:hidden absolute w-full h-[600px] top-0">
+        <div className="absolute w-[300px] h-[300px] left-[-50px] top-[-50px] bg-gradient-blur opacity-40" />
+        <div className="absolute w-[300px] h-[300px] right-[-50px] top-[100px] bg-gradient-blur opacity-40" />
+      </div>
+
+      {/* Content Container */}
+      <div className="relative max-w-[1440px] mx-auto">
+        {/* Navigation */}
+        <Navbar />
+        
+        {/* Main Sections */}
+        <div className="relative">
+          {/* Hero Section */}
+          <section id="hero" className="relative scroll-mt-[118px]">
+            <Hero />
+          </section>
+
+          {/* Stats Section */}
+          <StatsSection />
+
+          {/* Features Section */}
+          <section id="features" className="relative scroll-mt-[118px]">
+            <FeaturesSection />
+          </section>
+
+          {/* Events Section */}
+          <section id="events" className="relative scroll-mt-[118px]">
+            <EventsSection />
+          </section>
+
+          {/* How it Works Section */}
+          <section id="how-it-works" className="relative scroll-mt-[118px]">
+            <HowItWorksSection />
+          </section>
+
+          {/* NFT Rewards Section */}
+          <section id="nft-rewards" className="relative scroll-mt-[118px]">
+            <NFTRewardsSection />
+          </section>
+
+          {/* Footer */}
+          <Footer />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </main>
   );
-}
+};
+
+export default LandingPage;
