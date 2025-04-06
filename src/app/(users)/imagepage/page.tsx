@@ -1,7 +1,7 @@
 "use client"
-import { ArrowLeftIcon, ArrowLeftLongIcon, ArrowRightIcon, DownloadIcon, LoveIcon, ShareIcon } from "../../../assets/icons";
-import CircleBoxGradient from "../../../components/ui/CircleBoxGradient";
-import RoundRectGradient from "../../../components/ui/RoundRectGradient";
+import { ArrowLeftIcon, ArrowLeftLongIcon, ArrowRightIcon, DownloadIcon, LoveIcon, ShareIcon } from "@/assets/icons";
+import CircleBoxGradient from "@/components/ui/CircleBoxGradient";
+import RoundRectGradient from "@/components/ui/RoundRectGradient";
 import { useRouter } from "next/navigation";
 import { cleanString } from "../seemoreevents/page";
 

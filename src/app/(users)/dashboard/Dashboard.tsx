@@ -1,14 +1,14 @@
 "use client"
 import { useNavigate } from "react-router-dom";
-import MainHeaderLayout from "../../components/MainHeaderLayout";
-import { EventCard } from "../../components/ui/EventCard";
-import SideBar from "../../components/ui/SideBar";
-import { EventView, trendingEvents } from "../../data";
+import MainHeaderLayout from "@/components/MainHeaderLayout";
+import { EventCard } from "@/components/ui/EventCard";
+import SideBar from "@/components/ui/SideBar";
+import { EventView, trendingEvents } from "@/data";
 import { cleanString } from "./SeeMoreEvents";
-import Filter from "../../components/ui/Filter";
+import Filter from "@/components/ui/Filter";
 import { isValidSuiObjectId } from "@mysten/sui/utils";
-import { Counter } from "../../components/dashboard/counter";
-import { ProfileListDisplay } from "../../components/dashboard/Profile";
+import { Counter } from "@/components/dashboard/counter";
+import { ProfileListDisplay } from "@/components/dashboard/Profile";
 import { useState } from "react";
 
 const Events = () => {

@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeftLongIcon, Ellipse, FilterIcon } from "../../../assets/icons";
-import RoundRectGradient from "../../../components/ui/RoundRectGradient";
-import SearchInput from "../../../components/ui/SearchInput";
-import ImageViewer from "../../../components/ui/ImageViewer";
-import { aiPhotos, PhotoView } from "../../../data";
-import { cn } from "../../../lib/utils";
+import { ArrowLeftLongIcon, Ellipse, FilterIcon } from "@/assets/icons";
+import RoundRectGradient from "@/components/ui/RoundRectGradient";
+import SearchInput from "@/components/ui/SearchInput";
+import ImageViewer from "@/components/ui/ImageViewer";
+import { aiPhotos, PhotoView } from "@/data";
+import { cn } from "@/lib/utils";
 
 const AIPoweredSearch = () => {
     const router = useRouter();

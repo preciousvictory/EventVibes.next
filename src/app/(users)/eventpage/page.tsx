@@ -1,12 +1,12 @@
 "use client"
-import { EventSideBar } from "../../../components/ui/SideBar"
-import { EventView, photos, PhotoView, trendingEvents } from "../../../data"
-import MainLayout from "../../../components/MainLayout";
-import { CalenderIcon, LocationIcon, LoveIcon, NFTIcon, People, UploadIcon } from "../../../assets/icons";
-import SearchInput from "../../../components/ui/SearchInput";
-import AnimatedButton from "../../../components/ui/Button";
-import { PhotoCard } from "../../../components/ui/PhotoCard";
-import Filter from "../../../components/ui/Filter";
+import { EventSideBar } from "@/components/ui/SideBar"
+import { EventView, photos, PhotoView, trendingEvents } from "@/data"
+import MainLayout from "@/components/MainLayout";
+import { CalenderIcon, LocationIcon, LoveIcon, NFTIcon, People, UploadIcon } from "@/assets/icons";
+import SearchInput from "@/components/ui/SearchInput";
+import AnimatedButton from "@/components/ui/Button";
+import { PhotoCard } from "@/components/ui/PhotoCard";
+import Filter from "@/components/ui/Filter";
 import { cleanString } from "../seemoreevents/page";
 import { useRouter, useSearchParams } from "next/navigation";
 

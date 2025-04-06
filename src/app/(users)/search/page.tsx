@@ -1,8 +1,8 @@
 "use client"
 import { FilterIcon } from "../../assets/icons";
-import MainHeaderLayout from "../../components/MainHeaderLayout";
-import { EventCard } from "../../components/ui/EventCard";
-import SideBar from "../../components/ui/SideBar";
+import MainHeaderLayout from "@/components/MainHeaderLayout";
+import { EventCard } from "@/components/ui/EventCard";
+import SideBar from "@/components/ui/SideBar";
 import { categories, EventView } from "../../data";
 
 const searchResults = categories.map((categories) => { return categories.events[0] });

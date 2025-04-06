@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import FormInput from "../../../components/ui/FormInput";
-import AnimatedButton from "../../../components/ui/Button";
-import RoundRectGradient from "../../../components/ui/RoundRectGradient";
-import { ArrowLeftLongIcon, CancelIcon, Ellipse, ImageIconWhite, InfoYellowIcon, UploadIcon } from "../../../assets/icons";
-import SelectDropdown from "../../../components/ui/SelectDropdown";
+import FormInput from "@/components/ui/FormInput";
+import AnimatedButton from "@/components/ui/Button";
+import RoundRectGradient from "@/components/ui/RoundRectGradient";
+import { ArrowLeftLongIcon, CancelIcon, Ellipse, ImageIconWhite, InfoYellowIcon, UploadIcon } from "@/assets/icons";
+import SelectDropdown from "@/components/ui/SelectDropdown";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
