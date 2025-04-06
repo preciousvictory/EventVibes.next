@@ -10,7 +10,6 @@ import { NFTRewardsSection } from "@/components/landingPage/NFTRewardsSection";
 import { StatsSection } from "@/components/landingPage/StatsSection";
 import React from "react";
 
-
 export const LandingPage: React.FC = () => {
   return (
     <main className="relative min-h-screen w-full bg-[#141414] overflow-x-hidden scroll-smooth">
