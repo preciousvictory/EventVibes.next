@@ -12,7 +12,7 @@ const ImagePage = () => {
     const { imageUrl, photosList = [], currentImage = 0, eventName } = location.state || {};
 
     const goBack = () => {
-        // navigate(-1);
+        //router.goBack()
         router.push(`/view-event?q=${cleanString(eventName)}`); 
     };
 

@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { ArrowLeftLongIcon, Ellipse, FilterIcon } from "@/assets/icons";
 import RoundRectGradient from "@/components/ui/RoundRectGradient";
 import SearchInput from "@/components/ui/SearchInput";
@@ -19,7 +19,7 @@ const AIPoweredSearch = () => {
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
 
     const goBack = () => {
-        navigate(-1);
+        router.goBack()
     };
 
     const handleSearch = async (query: string) => {

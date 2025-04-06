@@ -1,5 +1,5 @@
 "use client"
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import MainHeaderLayout from "@/components/MainHeaderLayout";
 import { EventCard } from "@/components/ui/EventCard";
 import SideBar from "@/components/ui/SideBar";
@@ -12,7 +12,7 @@ import { ProfileListDisplay } from "@/components/dashboard/Profile";
 import { useState } from "react";
 
 const Events = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [counterId, setCounter] = useState(() => {
     const hash = window.location.hash.slice(1);
     return isValidSuiObjectId(hash) ? hash : null;
@@ -20,11 +20,11 @@ const Events = () => {
 
   const handleClickCategory = (categoryName: string) => {
     const path = `/view-category-event?q=${cleanString(categoryName)}`;;
-    navigate(path);
+    router.push(path);
   }
   const handleClickEvent = (event: string) => {
     const path = `/view-event?q=${cleanString(event)}`;;
-    navigate(path);
+    router.push(path);
   }
 
   return (

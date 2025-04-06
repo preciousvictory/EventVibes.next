@@ -1,15 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import { UploadIcon } from "../assets/icons";
-import { EventVibesLogo } from "../assets/Logo";
-import { MainProps } from "../types/components";
+import { useRouter } from "next/navigation";
+import { UploadIcon } from "@/assets/icons";
+import { EventVibesLogo } from "@/assets/Logo";
+import { MainProps } from "@/types/components";
 import AnimatedButton from "./ui/Button";
 import SearchInput from "./ui/SearchInput";
 
 const MainHeaderLayout: React.FC<MainProps> = ({ children, className = '' }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleUpload = () => {
-    navigate("/upload");
+    router.push("/upload");
   }
 
   return (
@@ -24,7 +24,7 @@ const MainHeaderLayout: React.FC<MainProps> = ({ children, className = '' }) => 
           </div>
           <div className="flex items-center justify-center space-x-4 flex-row">
             <div >
-              <SearchInput placeholder="Search events..." />
+              <SearchInput placeholder="Search events@." />
             </div>
 
             <div onClick={() => handleUpload()}>

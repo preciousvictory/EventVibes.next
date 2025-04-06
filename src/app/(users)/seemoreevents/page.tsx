@@ -1,10 +1,10 @@
 "use client"
-import { useSearchParams } from "react-router-dom";
 import { FilterIcon } from "@/assets/icons";
 import MainHeaderLayout from "@/components/MainHeaderLayout";
 import { EventCard } from "@/components/ui/EventCard";
 import SideBar from "@/components/ui/SideBar";
 import { categories, trendingEvents } from "@/data";
+import { useSearchParams } from "next/navigation";
 
 export const cleanString = (str: string) => {
     return str
