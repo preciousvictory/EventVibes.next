@@ -1,5 +1,6 @@
 import { LoveIcon } from "../../assets/icons"
 import { PhotoView } from "../../data"
+import Image from "next/image"
 
 export const PhotoCard = ({ photo }: { photo: PhotoView }) => {
     return (
@@ -9,7 +10,7 @@ export const PhotoCard = ({ photo }: { photo: PhotoView }) => {
                 <div className="flex absolute items-center justify-center space-x-1 text-sm bg-[#000000]/60 w-7 h-7 rounded-full top-3 right-3 z-100 cursor-pointer">
                     <LoveIcon />
                 </div>
-                <img
+                <Image
                     src={photo.image}
                     alt={photo.name}
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-115"

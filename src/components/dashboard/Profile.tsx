@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSuiClientQuery, useCurrentAccount } from "@mysten/dapp-kit";
 import { Container, Heading, Text, Flex, Box } from "@radix-ui/themes";
 import { MEMORY_PACKAGE_ID } from "../../constants/constants";
+import Image from "next/image"
 
 export function ProfileListDisplay() {
     const currentAccount = useCurrentAccount();
@@ -47,9 +48,9 @@ export function ProfileListDisplay() {
                 }
             >
                 <Flex direction="column" align="center">
-                    <img
-                        src={fields.image}
-                        alt={fields.name}
+                    <Image
+                        src={`${fields.image}`}
+                        alt={`${fields.name}`}
                         style={{
                             width: "100%",
                             height: "150px",
@@ -84,15 +85,15 @@ export function ProfileListDisplay() {
                 }}
             >
                 <Flex direction="row" align="center" gap="1rem">
-                    <img
-                        src={fields.image}
-                        alt={fields.name}
-                        style={{
-                            width: "100px",
-                            height: "100px",
-                            borderRadius: "50%",
-                            objectFit: "cover",
-                        }}
+                    <Image
+                         src={fields.image}
+                         alt={fields.name}
+                         style={{
+                             width: "100px",
+                             height: "100px",
+                             borderRadius: "50%",
+                             objectFit: "cover",
+                         }}
                     />
                     <Box>
                         <Heading size="4">{fields.name}</Heading>

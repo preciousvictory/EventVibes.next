@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button } from "../../components/Button";
+import Image from "next/image"
 
 export const NFTSection: React.FC = () => {
   return (
@@ -22,13 +23,13 @@ export const NFTSection: React.FC = () => {
             <h3 className="text-2xl font-semibold text-white">Event Star Badge</h3>
             <div className="flex items-center gap-1">
               <span className="text-xs font-medium text-white underline">0x9f3a7b2c8.....0d9e3a2b6d</span>
-              <img src="/arrow-right-1.svg" alt="arrow" className="w-3 h-3" />
+              <Image src="/arrow-right-1.svg" alt="arrow" className="w-3 h-3" />
             </div>
           </div>
 
           {/* Share Button */}
           <div className="absolute w-12 h-12 right-5 top-[260px] flex items-center justify-center bg-[#373737] border border-[rgba(55,55,55,0.4)] shadow-[4px_12px_32px_rgba(88,76,244,0.2)] rounded-full">
-            <img src="/arrow-right-1.svg" alt="share" className="w-5 h-5 transform -rotate-35" />
+          <Image src="/arrow-right-1.svg" alt="share" className="w-5 h-5 transform -rotate-35" />
           </div>
         </div>
 

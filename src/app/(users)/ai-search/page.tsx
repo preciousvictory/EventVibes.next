@@ -7,6 +7,7 @@ import SearchInput from "@/components/ui/SearchInput";
 import ImageViewer from "@/components/ui/ImageViewer";
 import { aiPhotos, PhotoView } from "@/data";
 import { cn } from "@/lib/utils";
+import Image from "next/image"
 
 const AIPoweredSearch = () => {
     const router = useRouter();
@@ -19,7 +20,7 @@ const AIPoweredSearch = () => {
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
 
     const goBack = () => {
-        router.goBack()
+        router.back()
     };
 
     const handleSearch = async (query: string) => {
@@ -140,11 +141,13 @@ const AIPoweredSearch = () => {
                                             onClick={() => handlePhotoClick(photo, index)}
                                             className="relative group rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
                                         >
-                                            <img
+                                            <Image
                                                 src={photo.image}
                                                 alt={photo.name}
                                                 className="w-full h-64 object-cover"
+                                                style={{ objectFit: "cover" }}
                                             />
+
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                                 <div className="absolute bottom-0 left-0 right-0 p-4">
                                                     <h4 className="text-white font-semibold">{photo.name}</h4>

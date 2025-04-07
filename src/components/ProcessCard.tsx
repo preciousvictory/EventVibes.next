@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image"
 interface ProcessCardProps {
   icon: string;
   title: string;
@@ -51,7 +51,7 @@ export const ProcessCard: React.FC<ProcessCardProps> = ({
         <div className="flex items-center justify-center w-[52px] h-[48px] bg-[rgba(255,255,255,0.1)] rounded-lg group-hover:bg-[rgba(255,255,255,0.15)] group-hover:ring-1 group-hover:ring-white/20 transition-all duration-500">
           {typeof icon === "string" ? (
             // If icon is a string path, render an image
-            <img
+            <Image
               src={icon}
               alt={`${title} icon`}
               className="w-6 h-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"

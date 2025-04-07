@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 const HeroSection: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
         <div className="ml-5 w-[39%] max-md:ml-0 max-md:w-full">
-          <img
+        <Image
         src="https://cdn.builder.io/api/v1/image/assets/b03167fcaefc45bfb39284c13d09f4f4/f0c778174752eb6de3aaee9c994e71c4d1b3f17b?placeholderIfAbsent=true"
         alt="NFT Rewards Illustration"
         className="object-contain grow w-full aspect-[1.25] max-md:max-w-full"

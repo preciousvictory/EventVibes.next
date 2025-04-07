@@ -5,60 +5,60 @@ import RoundRectGradient from "@/components/ui/RoundRectGradient";
 import { useRouter } from "next/navigation";
 import { cleanString } from "@/utils/string";
 import { useImageContext } from "@/context/imageContext"
+import Image from "next/image"
 
 const ImagePage = () => {
     const router = useRouter();
     const { imageUrl, photosList, currentImage, eventName, setImageData } = useImageContext();
 
     const goBack = () => {
-        //router.goBack()
         router.push(`/view-event?q=${cleanString(eventName)}`);
     };
 
     const handleNextImage = () => {
         if (!photosList.length) return;
-      
+
         let newImageId = currentImage + 1;
         if (newImageId >= photosList.length) {
-          newImageId = 0;
+            newImageId = 0;
         }
-      
+
         const photo = photosList[newImageId];
-      
+
         // update global context manually
         setImageData({
-          imageUrl: photo.image,
-          photosList,
-          currentImage: newImageId,
-          eventName
+            imageUrl: photo.image,
+            photosList,
+            currentImage: newImageId,
+            eventName
         });
-      
+
         // update URL path
         const path = `/images?q=${cleanString(photo.name)}`;
         router.push(path);
-      };
-      
-      const handlePrevImage = () => {
+    };
+
+    const handlePrevImage = () => {
         if (!photosList.length) return;
-      
+
         let newImageId = currentImage - 1;
         if (newImageId < 0) {
-          newImageId = photosList.length - 1;
+            newImageId = photosList.length - 1;
         }
-      
+
         const photo = photosList[newImageId];
-      
+
         setImageData({
-          imageUrl: photo.image,
-          photosList,
-          currentImage: newImageId,
-          eventName
+            imageUrl: photo.image,
+            photosList,
+            currentImage: newImageId,
+            eventName
         });
-      
+
         const path = `/images?q=${cleanString(photo.name)}`;
         router.push(path);
-      };
-      
+    };
+
 
     return (
         <div className="h-[85vh] bg-[var(--secondary)]">
@@ -104,7 +104,7 @@ const ImagePage = () => {
                         >
                             <div className="flex flex-col items-center justify-center gap-3 bg-[var(--secondary)] relative transition-all w-full h-full rounded-2xl text-center text-white">
                                 {imageUrl && (
-                                    <img
+                                    <Image
                                         src={imageUrl}
                                         alt={photosList[currentImage]?.name || 'image'}
                                         className="object-cover rounded-xl w-full h-full max-h-[90vh]"

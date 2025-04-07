@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../components/Button";
+import Image from "next/image"
 
 export const NFTRewardsSection: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ export const NFTRewardsSection: React.FC = () => {
           <div className="w-[580px] h-[532px] bg-white rounded-[20px] relative">
             {/* NFT Card Mock */}
             <div className="absolute w-full h-full bg-[#373737] rounded-[20px] overflow-hidden">
-              <img
+            <Image
                 src="https://cdn.builder.io/api/v1/image/assets/b03167fcaefc45bfb39284c13d09f4f4/f6d1be18cd15e6bba449b96fc209d4c4339280a5?placeholderIfAbsent=true"
                 alt="Event Star Badge Preview"
                 className="w-full h-full object-cover"

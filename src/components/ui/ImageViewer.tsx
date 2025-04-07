@@ -2,6 +2,7 @@ import { ArrowLeftIcon, ArrowRightIcon, DownloadIcon, LoveIcon, ShareIcon } from
 import CircleBoxGradient from "./CircleBoxGradient";
 import RoundRectGradient from "./RoundRectGradient";
 import { PhotoView } from "../../data";
+import Image from "next/image"
 
 interface ImageViewerProps {
     currentPhoto: PhotoView;
@@ -61,7 +62,7 @@ const ImageViewer = ({
                             group shadow-[0_20px_50px_rgba(42,1,52,0.55)] 
                             hover:shadow-[0_25px_60px_rgba(42,1,52,0.7)] transition-all duration-300">
                             <div className="flex flex-col items-center justify-center gap-3 bg-[var(--secondary)] relative transition-all rounded-2xl text-center text-white">
-                                <img
+                            <Image
                                     src={currentPhoto.image}
                                     alt={currentPhoto.name}
                                     className="object-contain rounded-xl max-h-[70vh] w-auto"

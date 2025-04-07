@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const Events = () => {
   const router = useRouter();
-  const [counterId, setCounter] = useState(() => {
+  const [counterId, _setCounter] = useState(() => {
     const hash = window.location.hash.slice(1);
     return isValidSuiObjectId(hash) ? hash : null;
   });

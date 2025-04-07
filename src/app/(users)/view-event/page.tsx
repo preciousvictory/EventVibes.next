@@ -9,6 +9,7 @@ import { PhotoCard } from "@/components/ui/PhotoCard";
 import Filter from "@/components/ui/Filter";
 import { useRouter, useSearchParams } from "next/navigation";
 import { cleanString } from "@/utils/string";
+import Image from "next/image"
 
 const EventPage = () => {
     const searchParams = useSearchParams();
@@ -17,7 +18,7 @@ const EventPage = () => {
 
     const events: EventView[] = trendingEvents;
 
-    let event = events.find(ev => (
+    const event = events.find(ev => (
         cleanString(ev.name) === cleanString(query || '')
     ));
     const PhotosList: PhotoView[] = photos;
@@ -50,9 +51,9 @@ const EventPage = () => {
                 <div>
                     <div className="relative h-[250px] w-full">
                         <div className="relative h-full w-full" >
-                            <img
-                                src={event?.eventImages.event_banner}
-                                alt={event?.name}
+                            <Image
+                                src={`${event?.eventImages.event_banner}`}
+                                alt={`${event?.name}`}
                                 className="object-cover w-full h-full"
                             />
                         </div>
@@ -90,9 +91,9 @@ const EventPage = () => {
 
                                 <div className="flex items-center space-x-2">
                                     <div className="h-10 w-10 rounded-full flex items-center justify-center">
-                                        <img
-                                            src={event?.eventImages.event_profile}
-                                            alt={event?.name}
+                                        <Image
+                                            src={`${event?.eventImages.event_profile}`}
+                                            alt={`${event?.name}`}
                                             className="object-cover w-full h-full rounded-full"
                                         />
                                     </div>
@@ -111,7 +112,7 @@ const EventPage = () => {
                             <div className="relative">
                                 <SearchInput
                                     placeholder="AI search galleries"
-                                    onClick={() =>router.push("/ai-search")}
+                                    onClick={() => router.push("/ai-search")}
                                     onKeyPress={(e) => {
                                         if (e.key === 'Enter') {
                                             router.push("/ai-search");

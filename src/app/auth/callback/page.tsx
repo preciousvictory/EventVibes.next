@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 export default function ZkLoginCallback() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [_userAddress, setUserAddress] = useState<string | null>(null);
+    const [userAddress, setUserAddress] = useState<string | null>(null);
     const router = useRouter();
 
     const FULLNODE_URL = process.env.NEXT_PUBLIC_FULLNODE_URL;
@@ -41,6 +41,9 @@ export default function ZkLoginCallback() {
             // console.log(zkLoginUserAddress);
 
             setUserAddress(zkLoginUserAddress);
+            if (userAddress !== null) {
+              localStorage.setItem('zkLoginUserAddress', userAddress);
+            }
 
             return zkLoginUserAddress
         } catch (error) {

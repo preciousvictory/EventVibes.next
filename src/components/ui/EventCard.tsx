@@ -1,12 +1,13 @@
 import { LoveIcon } from "../../assets/icons"
 import { EventView } from "../../data"
+import Image from "next/image"
 
 export const EventCard = ({ event }: { event: EventView }) => {
 
     return (
         <div className="relative rounded-2xl overflow-hidden aspect-square h-full w-full cursor-pointer shadow-lg hover:shadow-lg transition-shadow" style={{ '--tw-shadow-color': '#3F024F52' } as React.CSSProperties}>
             <div className="relative h-full w-full" >
-                <img
+            <Image
                     src={event.eventImages.event_profile}
                     alt={event.name}
                     className="object-cover w-full h-full"

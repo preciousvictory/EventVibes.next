@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 interface StatItemProps {
   number: string;
@@ -29,7 +30,7 @@ export const StatsSection: React.FC = () => {
     <section className="relative w-full h-[694px] bg-[#141414]">
       {/* Background Element */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <img
+      <Image
           src="https://cdn.builder.io/api/v1/image/assets/b03167fcaefc45bfb39284c13d09f4f4/c2e68f7b61ee2a7960c5cd266f8df13d83d4a61c?placeholderIfAbsent=true"
           alt="Background"
           className="object-cover w-full h-full opacity-20"
@@ -60,7 +61,7 @@ export const StatsSection: React.FC = () => {
 
         {/* Right Content - Image */}
         <div className="w-[538px] h-[526px] rounded-[20px] overflow-hidden">
-          <img
+        <Image
             src="https://cdn.builder.io/api/v1/image/assets/b03167fcaefc45bfb39284c13d09f4f4/2e796ae602814512abcf6ac9097b47ecf939f3ec?placeholderIfAbsent=true"
             alt="Events showcase"
             className="w-full h-full object-cover"

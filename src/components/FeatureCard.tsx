@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 interface FeatureCardProps {
   icon: string;
@@ -42,11 +43,12 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
         {/* Icon Container */}
         <div className="absolute w-[44px] h-[44px] left-[20px] top-[20px]">
           <div className="w-full h-full flex items-center justify-center bg-[rgba(255,255,255,0.1)] rounded-lg group-hover:bg-[rgba(255,255,255,0.15)] group-hover:ring-1 group-hover:ring-white/20 transition-all duration-500">
-            <img
+          <Image
               src={icon}
               alt={`${title} icon`}
               className="w-6 h-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
             />
+            
           </div>
         </div>
 

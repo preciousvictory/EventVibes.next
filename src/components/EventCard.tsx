@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 interface EventCardProps {
   image: string;
@@ -16,12 +17,11 @@ export const EventCard: React.FC<EventCardProps> = ({
   return (
     <article className="w-[278px] h-[270px] bg-white rounded-2xl overflow-hidden shadow-[4px_12px_20px_rgba(63,2,79,0.32)] relative">
       {/* Image */}
-      <img
+      <Image
         src={image}
         alt={title}
         className="w-full h-full object-cover"
       />
-
       {/* Gradient Overlay */}
       <div className="absolute left-0 bottom-0 w-full h-[93px] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
