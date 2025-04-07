@@ -5,19 +5,10 @@ import { EventCard } from "@/components/ui/EventCard";
 import SideBar from "@/components/ui/SideBar";
 import { categories, trendingEvents } from "@/data";
 import { useSearchParams } from "next/navigation";
-
-export const cleanString = (str: string) => {
-    return str
-        .toLowerCase()
-        .replace(/&/g, 'and')
-        .replace(/[\s-]+/g, '-')
-        .replace(/[^\w-]/g, '')
-        .replace(/--+/g, '-')
-        .replace(/^-+|-+$/g, '');
-};
+import { cleanString } from "@/utils/string";
 
 const SeeMoreEvents = () => {
-    const [searchParams] = useSearchParams();
+    const searchParams = useSearchParams();
     const query = searchParams.get("q");
     let category;
 

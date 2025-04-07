@@ -7,11 +7,11 @@ import SearchInput from "@/components/ui/SearchInput";
 import AnimatedButton from "@/components/ui/Button";
 import { PhotoCard } from "@/components/ui/PhotoCard";
 import Filter from "@/components/ui/Filter";
-import { cleanString } from "../seemoreevents/page";
 import { useRouter, useSearchParams } from "next/navigation";
+import { cleanString } from "@/utils/string";
 
 const EventPage = () => {
-    const [searchParams] = useSearchParams();
+    const searchParams = useSearchParams();
     const query = searchParams.get("q");
     const router = useRouter();
 
@@ -25,15 +25,15 @@ const EventPage = () => {
     const handleClickImage = (photo: PhotoView) => {
         const path = `/images?q=${cleanString(photo.name)}`;
         router.push(path);
-        router.push(path, {
-            state: {
-                imageUrl: photo.image,
-                id: photo.id,
-                photosList: PhotosList,
-                currentImage: PhotosList.indexOf(photo),
-                eventName: event?.name
-            }
-        });
+        // router.push(path, {
+        //     state: {
+        //         imageUrl: photo.image,
+        //         id: photo.id,
+        //         photosList: PhotosList,
+        //         currentImage: PhotosList.indexOf(photo),
+        //         eventName: event?.name
+        //     }
+        // });
     }
 
     const handleUpload = () => {

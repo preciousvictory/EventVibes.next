@@ -4,10 +4,10 @@ import MainHeaderLayout from "@/components/MainHeaderLayout";
 import { EventCard } from "@/components/ui/EventCard";
 import SideBar from "@/components/ui/SideBar";
 import { EventView, trendingEvents } from "@/data";
-import { cleanString } from "./SeeMoreEvents";
+import { cleanString } from "@/utils/string";
 import Filter from "@/components/ui/Filter";
 import { isValidSuiObjectId } from "@mysten/sui/utils";
-import { Counter } from "@/components/dashboard/counter";
+import { Counter } from "@/components/dashboard/Counter";
 import { ProfileListDisplay } from "@/components/dashboard/Profile";
 import { useState } from "react";
 

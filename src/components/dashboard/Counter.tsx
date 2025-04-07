@@ -1,3 +1,4 @@
+import { useNetworkVariable } from "@/app/networkConfig";
 import {
     useCurrentAccount,
     useSignAndExecuteTransaction,
@@ -9,7 +10,6 @@ import { Transaction } from "@mysten/sui/transactions";
 import { Button, Flex, Heading, Text } from "@radix-ui/themes";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-import { useNetworkVariable } from "../../networkConfig";
 
 export function Counter({ id }: { id: string }) {
     const counterPackageId = useNetworkVariable("counterPackageId");

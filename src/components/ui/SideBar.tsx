@@ -1,17 +1,17 @@
-import { useNavigate } from "react-router-dom";
 import { EditIcon, ProfileIcon } from "../../assets/icons"
 import { useState } from "react";
 import { EventVibesLogo } from "../../assets/Logo";
 import { SideBarList } from "../../constants";
+import { useRouter } from 'next/navigation';
 
 const SideBar = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const [selectedNav, setSelectedNav] = useState(SideBarList[0].name);
 
     const handleNavClick = (navItem: string) => {
         setSelectedNav(navItem);
         const path = navItem.toLowerCase().replace(/\s+/g, '-'); 
-        navigate(`/${path}`);
+        router.push(`/${path}`);
     };
 
     return (
@@ -54,13 +54,13 @@ const SideBar = () => {
 export default SideBar
 
 export const EventSideBar = () => {
-    const navigate = useNavigate();
+    const router = useRouter();
     const [selectedNav, setSelectedNav] = useState(SideBarList[0].name);
 
     const handleNavClick = (navItem: string) => {
         setSelectedNav(navItem);
         const path = navItem.toLowerCase().replace(/\s+/g, '-');
-        navigate(`/${path}`);
+        router.push(`/${path}`);
     };
 
     return (

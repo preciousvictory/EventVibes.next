@@ -3,60 +3,62 @@ import { ArrowLeftIcon, ArrowLeftLongIcon, ArrowRightIcon, DownloadIcon, LoveIco
 import CircleBoxGradient from "@/components/ui/CircleBoxGradient";
 import RoundRectGradient from "@/components/ui/RoundRectGradient";
 import { useRouter } from "next/navigation";
-import { cleanString } from "../seemoreevents/page";
+import { cleanString } from "@/utils/string";
+import { useImageContext } from "@/context/imageContext"
 
 const ImagePage = () => {
     const router = useRouter();
-
-    const location = useLocation();
-    const { imageUrl, photosList = [], currentImage = 0, eventName } = location.state || {};
+    const { imageUrl, photosList, currentImage, eventName, setImageData } = useImageContext();
 
     const goBack = () => {
         //router.goBack()
-        router.push(`/view-event?q=${cleanString(eventName)}`); 
+        router.push(`/view-event?q=${cleanString(eventName)}`);
     };
 
     const handleNextImage = () => {
         if (!photosList.length) return;
-
+      
         let newImageId = currentImage + 1;
         if (newImageId >= photosList.length) {
-            newImageId = 0;
+          newImageId = 0;
         }
-
+      
         const photo = photosList[newImageId];
-        const path = `/images?q=${cleanString(photo.name)}`;
-
-       router.push(path, {
-            state: {
-                imageUrl: photo.image,
-                id: photo.id,
-                photosList: photosList,
-                currentImage: newImageId
-            }
+      
+        // update global context manually
+        setImageData({
+          imageUrl: photo.image,
+          photosList,
+          currentImage: newImageId,
+          eventName
         });
-    };
-
-    const handlePrevImage = () => {
+      
+        // update URL path
+        const path = `/images?q=${cleanString(photo.name)}`;
+        router.push(path);
+      };
+      
+      const handlePrevImage = () => {
         if (!photosList.length) return;
-
+      
         let newImageId = currentImage - 1;
         if (newImageId < 0) {
-            newImageId = photosList.length - 1;
+          newImageId = photosList.length - 1;
         }
-
+      
         const photo = photosList[newImageId];
-        const path = `/images?q=${cleanString(photo.name)}`;
-
-        router.push(path, {
-            state: {
-                imageUrl: photo.image,
-                id: photo.id,
-                photosList: photosList,
-                currentImage: newImageId
-            }
+      
+        setImageData({
+          imageUrl: photo.image,
+          photosList,
+          currentImage: newImageId,
+          eventName
         });
-    };
+      
+        const path = `/images?q=${cleanString(photo.name)}`;
+        router.push(path);
+      };
+      
 
     return (
         <div className="h-[85vh] bg-[var(--secondary)]">

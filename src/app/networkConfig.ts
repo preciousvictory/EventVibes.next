@@ -4,7 +4,7 @@ import {
   // TESTNET_COUNTER_PACKAGE_ID,
   MAINNET_COUNTER_PACKAGE_ID,
   MEMORY_PACKAGE_ID,
-} from "./constants/constants";
+} from "@/constants/constants";
 import { createNetworkConfig } from "@mysten/dapp-kit";
 
 const { networkConfig, useNetworkVariable, useNetworkVariables } =
